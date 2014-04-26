@@ -6,14 +6,14 @@ if [ ! -f `dirname $0`/config.sh ]; then
 fi
 . `dirname $0`/config.sh
 
-if [ -f `dirname $0`/../env_staging ]; then
+if [[ -f $(dirname $0)/../env_staging ]]; then
   env="staging"
-  if [ -z "$remote_env" ]; then
+  if [[ -z $remote_env ]]; then
     remote_env="production"
   fi
-elif [ -f `dirname $0`/../env_local ]; then
+elif [[ -f $(dirname $0)/../env_local ]]; then
   env="local"
-  if [ -z "$remote_env" ]; then
+  if [[ -z $remote_env ]]; then
     remote_env="production"
   fi
 else
@@ -26,7 +26,7 @@ env_username=`eval "echo \\$${env}_username"`
 env_password=`eval "echo \\$${env}_password"`
 env_webroot=`eval "echo \\$${env}_webroot"`
 
-if [ -n "$remote_env" ]; then
+if [[ -n $remote_env ]]; then
   echo "remote: $remote_env"
   remote_database=`eval "echo \\$${remote_env}_database"`
   remote_username=`eval "echo \\$${remote_env}_username"`
