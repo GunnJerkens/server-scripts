@@ -11,6 +11,7 @@ production_password='{pw_prod}'
 production_ssh={ssh_prod}@{hostname_prod}
 production_ssh_port=22
 production_webroot={wr_prod}
+production_uploads=$production_webroot/shared
 
 staging_database={db_staging}
 staging_username=$production_username
@@ -19,10 +20,13 @@ staging_password=$production_password
 staging_ssh={ssh_staging}@{hostname_staging}
 staging_ssh_port=22
 staging_webroot={wr_staging}
+staging_uploads=$staging_webroot/shared
 
 local_database={db_dev}
 local_username=root
 local_password=
+local_webroot=$(dirname $0)/../public
+local_uploads=$local_webroot/shared
 
 #leave this empty to use the default, otherwise "local", "staging" or "production"
 remote_env=

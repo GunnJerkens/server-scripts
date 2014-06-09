@@ -25,6 +25,7 @@ env_database=`eval "echo \\$${env}_database"`
 env_username=`eval "echo \\$${env}_username"`
 env_password=`eval "echo \\$${env}_password"`
 env_webroot=`eval "echo \\$${env}_webroot"`
+env_uploads=`eval "echo \\$${env}_uploads"`
 
 if [[ -n $remote_env ]]; then
   echo "remote: $remote_env"
@@ -34,6 +35,7 @@ if [[ -n $remote_env ]]; then
   remote_ssh=`eval "echo \\$${remote_env}_ssh"`
   remote_ssh_port=`eval "echo \\$${remote_env}_ssh_port"`
   remote_webroot=`eval "echo \\$${remote_env}_webroot"`
+  remote_uploads=`eval "echo \\$${remote_env}_uploads"`
 else
   echo "no remote env"
 fi

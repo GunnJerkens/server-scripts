@@ -17,11 +17,9 @@ else
   options="--delete"
 fi
 
-webroot=`dirname $0`/../public
-
-rsync -ruvPz -e "ssh -p $remote_ssh_port" $options $remote_ssh:$remote_webroot/shared $webroot/
+rsync -ruvPz -e "ssh -p $remote_ssh_port" $options $remote_ssh:$remote_uploads/ $env_uploads/
 
 if [ "$1" = "go" ]; then
   echo -n "(Making uploads writable by the group) "
-  sudo chmod -R g+w $webroot/shared
+  sudo chmod -R g+w $env_uploads/
 fi
