@@ -34,6 +34,6 @@ This is for post-receive hooks for Git. Allowing you to push to a server as oppo
 
 If you interrupt (Ctrl+C) a db_fetch it will most likely corrupt your current database, to fix run the fetch again.
 
-## License
+## license
 
 MIT
