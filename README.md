@@ -14,7 +14,7 @@ Server scripts for the maintenance of WordPress projects
 1. Copy `config.sample.sh` to `config.sh`
 2. Place an `env_local` or `env_staging` file in the root of your project
 3. Use `./db_fetch.sh` to clone the database from production
-4. Use `./uploads_sync.sh` to close the uploads from production
+4. Use `./uploads_sync.sh` to clone the uploads from production
 
 ## other usage
 
