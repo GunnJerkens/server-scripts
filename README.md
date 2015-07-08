@@ -5,16 +5,16 @@ Server scripts for the maintenance of WordPress projects
 
 ## benefits
 
-- Quickly syncs a production database to local or staging from production or staging
-- Quickly syncs uploads back to local or staging from production or staging
-- When syncing uploads files that do not exist in production or staging are deleted
+- Quickly syncs a production database to local/staging from staging/production  
+- Quickly syncs uploads back to local or staging from staging/production  
+- When syncing uploads files that do not exist in staging/production are deleted  
 
 ## basic usage
 
-1. Copy `config.sample.sh` to `config.sh`
-2. Place an `env_local` or `env_staging` file in the root of your project
-3. Use `./db_fetch.sh` to clone the database from production
-4. Use `./uploads_sync.sh` to clone the uploads from production
+1. Copy `bin/config.sample.sh` to `bin/config.sh` and edit  
+2. Place an `env_local` or `env_staging` file in the root of your project  
+3. Use `bin/db_fetch.sh` to clone the database  
+4. Use `bin/uploads_sync.sh` to clone the uploads  
 
 ## other usage
 
