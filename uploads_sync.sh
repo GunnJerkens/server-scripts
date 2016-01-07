@@ -2,6 +2,8 @@
 
 . `dirname $0`/bootstrap.sh
 
+size=""
+
 if [ -z "$remote_env" ]; then
   echo "this server appears to be at the top of the food chain (production?)"
   exit 1
@@ -17,7 +19,11 @@ else
   options="--delete"
 fi
 
-rsync -ruvPz -e "ssh -p $remote_ssh_port" $options $remote_ssh:$remote_uploads/ $env_uploads/
+if [ ! -z "$max_size" ]; then
+  size="--max-size=$max_size"
+fi
+
+rsync -ruvPz -e "ssh -p $remote_ssh_port" $options $size $remote_ssh:$remote_uploads/ $env_uploads/
 
 if [ "$1" = "go" ]; then
   echo -n "(Making uploads writable by the group) "
