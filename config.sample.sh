@@ -22,7 +22,7 @@ staging_ssh_port={port_staging}
 staging_webroot={wr_staging}
 staging_uploads=$staging_webroot/shared
 
-local_database={db_dev}
+local_database={db_test}
 local_username=root
 local_password=
 local_webroot=$(dirname $0)/../public
